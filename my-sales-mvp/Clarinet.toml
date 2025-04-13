@@ -1,7 +1,7 @@
 [project]
 name = "my-sales-mvp"
 authors = []
-description = "A sales tracking smart contract with commission calculation"
+description = "A sales tracking smart contract with tiered commission calculation"
 telemetry = false
 requirements = []
 boot_contracts = ["pox", "costs-v2", "bns"]
@@ -9,6 +9,10 @@ boot_contracts = ["pox", "costs-v2", "bns"]
 [contracts.sales-contract]
 path = "contracts/sales-contract.clar"
 depends_on = []
+
+[contracts.commission-manager]
+path = "contracts/commission-manager.clar"
+depends_on = ["sales-contract"]
 
 [repl]
 costs_version = 2
